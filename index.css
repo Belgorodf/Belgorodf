@@ -1,36 +1,36 @@
 @font-face {
     font-family: 'InterBold';
-    src: url('../fonts/Inter-Bold.otf') format('truetype');
+    src: url('./Inter-Bold.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'InterBlack';
-    src: url('../fonts/Inter-Black.otf') format('truetype');
+    src: url('./Inter-Black.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'NikoMoji';
-    src: url('../fonts/NicoMoji-Regular.ttf') format('truetype');
+    src: url('./NicoMoji-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'InterBoldItalic';
-    src: url('../fonts/Inter-BoldItalic.otf') format('truetype');
+    src: url('./Inter-BoldItalic.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Krona One';
-    src: url("../fonts/KronaOne-Regular.ttf") format('truetype');
+    src: url("./KronaOne-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Notable';
-    src: url("../fonts/Notable-Regular.ttf") format('truetype');
+    src: url("./Notable-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -143,7 +143,7 @@ header > * {
 #start-view {
     margin-top: 70px;
     position: relative;
-    background-image: url("../file/8bdcc9e0eb679e44db4aa51d727fb92e.gif");
+    background-image: url("./8bdcc9e0eb679e44db4aa51d727fb92e.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -232,7 +232,7 @@ header > * {
 
 #brief-info {
     position: relative;
-    background-image: url("../file/21116158daaeb1459b4ec0758505e1ad.gif");
+    background-image: url("./21116158daaeb1459b4ec0758505e1ad.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -368,7 +368,7 @@ header > * {
 
 #contact {
     position: relative;
-    background-image: url("../file/03ad71abf3741f3188428ff0d95d1616.gif");
+    background-image: url("./03ad71abf3741f3188428ff0d95d1616.gif");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -416,7 +416,7 @@ header > * {
     position: relative; /* Устанавливаем родительский контейнер для позиционирования фона */
     width: 65vw; /* Ширина элемента */
     padding-bottom:31%; /* Высота элемента пропорциональна ширине (43% для соотношения 7:3) */
-    background-image: url("../file/1cc1d0d4aad11de649b0ddb28b97ef6e.gif");
+    background-image: url("./1cc1d0d4aad11de649b0ddb28b97ef6e.gif");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;

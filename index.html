@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rozioi</title>
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <script src="./scripts/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 1000, // Продолжительность скролла в миллисекундах
+                speedAsDuration: true // Использовать продолжительность скролла как скорость
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<div>
+
+    <header>
+        <a href="index.html">Rozioi</a>
+
+        <a href="./pages/blog.html">Blog</a>
+        <a href="./pages/projects.html">Projects</a>
+        <a href="./pages/about.html">About me</a>
+        <a href="#contact">Contact</a>
+
+
+    </header>
+    <main >
+        <section id="start-view">
+            <div class="greeting">
+                <p>WELCOME</p>
+                <p>hello, world!</p>
+            </div>
+            <p class="phrase">We have to believe in our dreams </p>
+            <div class="indicator-bottom">
+                <p>Scroll down</p>
+                <img src="assets/file/down-arrow.png" alt="down arrow"/>
+            </div>
+
+        </section>
+        <section id="brief-info">
+            <div class="technologies-block">
+                <div class="tech-item" style="background-color: #E44D26;"><img src="./assets/file/logo/html5.png"
+                                                                               alt="HTML"></div>
+                <div class="tech-item" style="background-color: #1572B6;"><img src="./assets/file/logo/css3.png"
+                                                                               alt="CSS"></div>
+                <div class="tech-item" style="background-color: #f0db2f;"><img src="./assets/file/logo/javascript.png"
+                                                                               style="border-radius: 15px"
+                                                                               alt="JavaScript"></div>
+                <div class="tech-item" style="background-color: #FFFFFF;"><img src="./assets/file/logo/express.png"
+                                                                               alt="Express"></div>
+                <div class="tech-item" style="background-color: #ffffff;"><img src="./assets/file/logo/nodejs.png"
+                                                                               alt="NodeJs"></div>
+                <div class="tech-item" style="background-color: #ffffff;"><img src="./assets/file/logo/postgresql.png"
+                                                                               alt="PostgreSQL"></div>
+                <div class="tech-item" style="background-color: #FFFFFF;"><img src="./assets/file/logo/git.png"
+                                                                               alt="Git"></div>
+                <div class="tech-item" style="background-color: #FFFFFF;"><img src="./assets/file/logo/react.png"
+                                                                               alt="React"></div>
+                <div class="tech-item" style="background-color: #FFFFFF;"><img src="./assets/file/logo/sqlite.png"
+                                                                               alt="SQLite"></div>
+            </div>
+            <div class="info-block">
+
+                <div class="flex-info">
+                    <p class="greeting-and-name">Hi! I'm Vanya</p>
+                    <div class="info-block-flex">
+                        <p>I am a beginner full-stack developer with experience in creating web applications and solving
+                            business problems.</p>
+                        <p>My path in programming began in October 2023, and since then I have been enthusiastically
+                            working on projects that may come to mind.</p>
+
+
+                    </div>
+
+                </div>
+                <div class="name-block">
+                    <p>IVAN ZHELEZNY</p>
+                </div>
+            </div>
+
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="text-content">
+                    <div class="background-div">
+                        <!-- Фон через CSS -->
+                    </div>
+                    <div class="text-block">
+                        <p>Read the latest articles</p>
+                        <p>
+                            Check out our new publications to learn about the latest trends and technologies in development.
+                        </p>
+                        <button id="lookButton">Look</button>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <div class="social-item">
+                        <img src="assets/file/social/tg.png" alt="telegram"/>
+                        <p>@rozioi</p>
+                    </div>
+                    <div class="social-item">
+                        <img src="assets/file/social/x(twitter).png" alt="X"/>
+                        <p>@BelgorodGame</p>
+                    </div>
+                    <div class="social-item">
+                        <img src="assets/file/social/tiktok.png" alt="tiktok"/>
+                        <p>@rozioi_it</p>
+                    </div>
+                    <div class="social-item">
+                        <img src="assets/file/social/youtube.png" alt="youtube"/>
+                        <p>@rozioi_san</p>
+                    </div>
+                    <div class="social-item">
+                        <img src="assets/file/social/instagram.png" alt="instagram"/>
+                        <p>@ousyiyme</p>
+                    </div>
+                    <div class="social-item">
+                        <img src="assets/file/social/tg.png" alt="telegram"/>
+                        <p>@itfromrozioi</p>
+                    </div>
+                </div>
+                <p class="footer-text">ivanzheleznuy@gmail.com</p>
+                <p class="footer-text">© 2024 Rozioi Blog - All Rights Reserved</p>
+            </div>
+
+        </section>
+    </main>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        },500)
+    });
+</script>
+</body>
+</html>

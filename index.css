@@ -1,0 +1,718 @@
+@font-face {
+    font-family: 'InterBold';
+    src: url('../fonts/Inter-Bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'InterBlack';
+    src: url('../fonts/Inter-Black.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NikoMoji';
+    src: url('../fonts/NicoMoji-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'InterBoldItalic';
+    src: url('../fonts/Inter-BoldItalic.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Krona One';
+    src: url("../fonts/KronaOne-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Notable';
+    src: url("../fonts/Notable-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body, main {
+    min-height: 100vh;
+    width: 100vw;
+    height: 300vh;
+    background-color: #4CAF50;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Темный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Должен быть поверх всего контента */
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Серый фон */
+    border-top: 16px solid #3498db; /* Синий верхний бордер */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* Анимация спиннера */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Скрытие loader после загрузки страницы */
+body.loaded #loader {
+    display: none;
+}
+
+header {
+    position: fixed;
+    height: 70px;
+    width: 100vw;
+    background-color: #B9B9B9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    justify-content: space-between; /* Разделяет элементы на левый и правый край */
+    font-size: 22px;
+    font-family: 'InterBold', sans-serif;
+    margin-bottom: 0;
+    z-index: 999;
+}
+
+header a{
+
+    text-decoration: double;
+    transition: .5s;
+    color: white;
+}
+header a:hover{
+    transform: scale(1.1);
+}
+
+header *:first-child {
+    margin-left: 20px; /* Добавляем отступ от левого края, если нужно */
+}
+header *:nth-child(2){
+    margin-left: auto; /* Сдвигаем остальные элементы к правому краю */
+
+}
+
+header *:not(:first-child) {
+    margin-right: 80px; /* Добавляем отступ от правого края, если нужно */
+}
+
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+header > * {
+
+    position: relative;
+    z-index: 2;
+}
+
+#start-view {
+    margin-top: 70px;
+    position: relative;
+    background-image: url("../file/8bdcc9e0eb679e44db4aa51d727fb92e.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Ориентируем элементы вертикально */
+    justify-content: flex-start; /* Вертикальное выравнивание по верхнему краю */
+    align-items: center; /* Горизонтальное выравнивание по центру */
+}
+
+#start-view::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#start-view > * {
+    position: relative;
+    z-index: 2;
+}
+
+.greeting{
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение текста */
+    align-items: center;
+
+    font-family: "NikoMoji", sans-serif;
+    color: white;
+}
+.greeting p:first-child {
+    margin-top: 15px;
+    font-size: 38px;
+    letter-spacing: 20px;
+}
+.greeting p:not(:first-child){
+    margin-top: 0;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+.phrase {
+    align-content: center;
+    justify-content: center;
+    margin-top: 20%;
+    color: white;
+    font-size: 48px;
+    font-family: 'InterBlack', sans-serif;
+}
+
+.indicator-bottom{
+    margin-top: 100px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.indicator-bottom p{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'InterBoldItalic', sans-serif;
+    color: #FFFFFF;
+}
+.indicator-bottom img {
+    height: 170px;
+    width: 150px;
+    animation: pulse 2s infinite; /* Применяем анимацию 'pulse' с продолжительностью 2 секунды, повторяющуюся бесконечно */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Исходный размер */
+    }
+    50% {
+        transform: scale(1.1); /* Увеличиваем размер на 10% */
+    }
+    100% {
+        transform: scale(1); /* Возвращаемся к исходному размеру */
+    }
+}
+
+
+#brief-info {
+    position: relative;
+    background-image: url("../file/21116158daaeb1459b4ec0758505e1ad.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+; /* Горизонтальное выравнивание по центру */
+}
+
+#brief-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(161, 161, 161, 0.2);
+    z-index: 1;
+}
+
+#brief-info > * {
+    position: relative;
+    z-index: 2;
+}
+.technologies-block {
+    display: grid;
+    margin-left: 15px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Увеличение размера для фона */
+    gap: 15px;  /* Расстояние между иконками */
+    grid-row-gap: 25px;
+    width: 30%; /* Занимает 40% от ширины секции */
+}
+.tech-item {
+    position: relative; /* Для позиционирования фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50; /* Цвет фона (здесь зелёный, можно изменить) */
+    border-radius: 50%; /* Закругление фона до круга */
+    width: 80px; /* Размер фона */
+    height: 80px;
+    transition: transform 0.3s ease; /* Плавный эффект при наведении */
+}
+
+/* Стили для иконок */
+.tech-item img {
+    width: 50px; /* Размер иконки */
+    height: 50px;
+    object-fit: contain;
+
+}
+/* Эффект при наведении */
+.tech-item:hover {
+    transform: scale(1.1); /* Увеличение размера при наведении */
+}
+.info-block {
+    box-sizing: border-box;
+    margin-top: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    padding: 20px;
+}
+
+.flex-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Центрирует содержимое по горизонтали */
+    text-align: center; /* Центрирует текст внутри */
+    margin-right: 36px; /* Отступ справа между блоками */
+    margin-bottom: 20px; /* Отступ снизу между блоками */
+}
+
+.greeting-and-name {
+    font-size: 76px;
+    font-family: "Krona One", sans-serif;
+    color: white;
+    margin: 0;
+    padding-bottom: 30px; /* Отступ снизу для разделения с остальным контентом */
+    text-align: center; /* Центрирует текст внутри блока */
+}
+
+.info-block-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки для текстов */
+    gap: 30px; /* Расстояние между колонками */
+    color: white;
+    justify-items: start; /* Выравнивание содержимого по левому краю в сетке */
+    max-width: 525px; /* Ограничивает ширину блока */
+}
+
+.info-block-flex p {
+    margin: 0;
+    font-size: 28px;
+    text-align: left; /* Выравнивание текста по левому краю внутри абзацев */
+    font-family: 'InterBold', sans-serif;
+}
+
+.name-block {
+    position: relative;
+    font-family: 'Notable', sans-serif;
+    letter-spacing: 8px;
+    border-radius: 18px;
+    color: white;
+    writing-mode: vertical-rl; /* Вертикальное написание текста снизу вверх */
+
+    transform: rotate(180deg); /* Поворот текста на 180 градусов */
+    font-size: 26px; /* Размер шрифта для имени */
+    align-self: flex-start; /* Привязка к началу колонки */
+    padding: 10px; /* Добавляем отступы вокруг текста, чтобы псевдоэлемент не перекрывал текст */
+    overflow: hidden; /* Скрывает все содержимое, выходящее за пределы блока */
+}
+
+.name-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #979797; /* Цвет фона */
+    opacity: 0.5; /* Прозрачность фона */
+    z-index: -1; /* Помещаем фон под текст */
+}
+
+.name-block p {
+    text-align: center;
+    margin: 5px; /* Убирает отступы вокруг текста */
+}
+
+#contact {
+    position: relative;
+    background-image: url("../file/03ad71abf3741f3188428ff0d95d1616.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+; /* Горизонтальное выравнивание по центру */
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#contact > * {
+    position: relative;
+    z-index: 2;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center; /* Выравнивание по верхнему краю */
+    padding: 20px;
+
+}
+
+.text-content {
+    flex: 2; /* Занимает больше пространства */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch
+}
+
+.background-div {
+    position: relative; /* Устанавливаем родительский контейнер для позиционирования фона */
+    width: 65vw; /* Ширина элемента */
+    padding-bottom:31%; /* Высота элемента пропорциональна ширине (43% для соотношения 7:3) */
+    background-image: url("../file/1cc1d0d4aad11de649b0ddb28b97ef6e.gif");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    border-radius: 25px;
+    overflow: hidden; /* Скрывает лишнее содержимое */
+
+}
+
+.text-block {
+    margin-left: 50px;
+    background-color: #D3D3D3;
+    border-radius: 25px;
+    max-width: 375px;
+    width: fit-content;
+    padding: 20px; /* Убираем padding-bottom */
+    text-align: center; /* Центрирование текста внутри блока */
+    font-family: 'InterBold',sans-serif;
+}
+.text-block p:first-child{
+
+    margin: 0 0 10px 0; /* Отступы между абзацами */
+    font-size: 25px;
+    margin-top: 25px;
+    color: #000000; /* Цвет текста (можно изменить) */
+}
+.text-block p:nth-child(2){
+    font-size: 25px;
+    margin: 0 auto; /* Центрирование блока с абзацем внутри контейнера */
+    margin-top: 5px;
+    width: 85%; /* Ширина абзаца */
+    text-align: center; /* Центрирование текста внутри абзаца */
+
+}
+
+.text-block button {
+    margin-top: 70px;
+    justify-items: flex-end;
+    border: none;
+    background-color: #C0C0C0;
+    padding: 0; /* Убираем внутренние отступы */
+    font-size: 16px;
+    width: 200px; /* Ширина кнопки */
+    height: 60px; /* Высота кнопки */
+    border-radius: 30px; /* Радиус скругления для овальной формы */
+    cursor: pointer;
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 60px; /* Выравнивание текста по вертикали */
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
+    transition: background-color 0.5s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #B0B0B0; /* Цвет фона при наведении */
+}
+
+button:active {
+    background-color: #A0A0A0; /* Цвет фона при нажатии */
+    transform: scale(0.95); /* Немного уменьшает размер кнопки при нажатии */
+}
+
+.social-media {
+    font-family: 'InterBold', sans-serif;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap; /* Перенос элементов на следующую строку */
+    gap: 10px; /* Расстояние между значками */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+}
+
+.social-item {
+    display: flex;
+    align-items: center; /* Центрирует иконку и текст по вертикали */
+    color: white;
+    gap: 5px; /* Расстояние между иконкой и текстом */
+}
+
+.social-item img {
+    width: 34px;
+    height: auto; /* Поддерживает пропорции изображения */
+}
+
+.footer-text {
+    font-family: 'InterBold', sans-serif;
+    color: white;
+    text-align: center; /* Центрирование текста по горизонтали */
+    margin-top: 20px; /* Отступ сверху */
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+/* Общие стили для мобильных устройств */
+@media screen and (max-width: 767px) {
+    header {
+        font-size: 18px; /* Уменьшаем размер шрифта в шапке */
+        height: 60px; /* Уменьшаем высоту шапки */
+    }
+
+    header a {
+        font-size: 16px; /* Уменьшаем размер шрифта в ссылках */
+    }
+
+    #start-view {
+        height: 70vh; /* Уменьшаем высоту стартового экрана */
+        background-size: cover; /* Сохраняем покрытие фона */
+    }
+
+    .greeting p:first-child {
+        font-size: 28px; /* Уменьшаем размер шрифта для первого абзаца */
+        letter-spacing: 10px; /* Уменьшаем межбуквенный интервал */
+    }
+
+    .greeting p:not(:first-child) {
+        font-size: 18px; /* Уменьшаем размер шрифта для остальных абзацев */
+        letter-spacing: 3px; /* Уменьшаем межбуквенный интервал */
+    }
+
+    .phrase {
+        font-size: 36px; /* Уменьшаем размер шрифта для фразы */
+    }
+
+    .indicator-bottom p {
+        font-size: 24px; /* Уменьшаем размер шрифта для индикатора */
+    }
+
+    .indicator-bottom img {
+        height: 120px; /* Уменьшаем размер изображения индикатора */
+    }
+
+    #brief-info {
+        height: auto; /* Позволяет блоку адаптироваться к содержимому */
+        flex-direction: column; /* Переключаем в колонное направление */
+    }
+
+    .technologies-block {
+        grid-template-columns: repeat(2, minmax(80px, 1fr)); /* Уменьшаем количество колонок */
+        width: 80%; /* Уменьшаем ширину блока */
+    }
+
+    .tech-item {
+        width: 60px; /* Уменьшаем размер фона */
+        height: 60px; /* Уменьшаем высоту фона */
+    }
+
+    .tech-item img {
+        width: 40px; /* Уменьшаем размер иконок */
+        height: 40px; /* Уменьшаем высоту иконок */
+    }
+
+    .info-block {
+        flex-direction: column; /* Переключаем в колонное направление */
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    .info-block-flex {
+        grid-template-columns: 1fr; /* Переключаем на одну колонку */
+    }
+
+    .info-block-flex p {
+        font-size: 20px; /* Уменьшаем размер шрифта в блоке информации */
+    }
+
+    .name-block {
+        font-size: 20px; /* Уменьшаем размер шрифта для имени */
+    }
+
+    #contact {
+        height: auto; /* Позволяет блоку адаптироваться к содержимому */
+        flex-direction: column; /* Переключаем в колонное направление */
+    }
+
+    .container {
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    .background-div {
+        width: 90vw; /* Уменьшаем ширину фона */
+        padding-bottom: 50%; /* Пропорции для фона */
+    }
+
+    .text-block {
+        max-width: 100%; /* Уменьшаем максимальную ширину блока текста */
+    }
+
+    .text-block p:first-child {
+        font-size: 20px; /* Уменьшаем размер шрифта */
+    }
+
+    .text-block p:nth-child(2) {
+        font-size: 18px; /* Уменьшаем размер шрифта для второго абзаца */
+    }
+
+    .text-block button {
+        width: 160px; /* Уменьшаем ширину кнопки */
+        height: 50px; /* Уменьшаем высоту кнопки */
+        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+    }
+
+    .social-media {
+        font-size: 14px; /* Уменьшаем размер шрифта в социальных сетях */
+    }
+
+    .social-item img {
+        width: 30px; /* Уменьшаем размер иконок социальных сетей */
+    }
+}
+
+/* Другая версия медиа-запросов для еще меньших экранов */
+@media screen and (max-width: 479px) {
+    header {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта в шапке */
+    }
+
+    header a {
+        font-size: 14px; /* Еще больше уменьшаем размер шрифта в ссылках */
+    }
+
+    #start-view {
+        height: 60vh; /* Еще больше уменьшаем высоту стартового экрана */
+    }
+
+    .greeting p:first-child {
+        font-size: 24px; /* Еще больше уменьшаем размер шрифта для первого абзаца */
+        letter-spacing: 8px; /* Еще больше уменьшаем межбуквенный интервал */
+    }
+
+    .greeting p:not(:first-child) {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта для остальных абзацев */
+        letter-spacing: 2px; /* Еще больше уменьшаем межбуквенный интервал */
+    }
+
+    .phrase {
+        font-size: 28px; /* Еще больше уменьшаем размер шрифта для фразы */
+    }
+
+    .indicator-bottom p {
+        font-size: 20px; /* Еще больше уменьшаем размер шрифта для индикатора */
+    }
+
+    .indicator-bottom img {
+        height: 100px; /* Еще больше уменьшаем размер изображения индикатора */
+    }
+
+    .technologies-block {
+        grid-template-columns: repeat(1, minmax(60px, 1fr)); /* Одна колонка для иконок */
+        width: 100%; /* Ширина блока равна ширине контейнера */
+    }
+
+    .tech-item {
+        width: 50px; /* Еще больше уменьшаем размер фона */
+        height: 50px; /* Еще больше уменьшаем высоту фона */
+    }
+
+    .tech-item img {
+        width: 30px; /* Еще больше уменьшаем размер иконок */
+        height: 30px; /* Еще больше уменьшаем высоту иконок */
+    }
+
+    .info-block {
+        padding: 5px; /* Еще больше уменьшаем отступы */
+    }
+
+    .info-block-flex {
+        grid-template-columns: 1fr; /* Одна колонка для текста */
+    }
+
+    .info-block-flex p {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта в блоке информации */
+    }
+
+    .name-block {
+        font-size: 18px; /* Еще больше уменьшаем размер шрифта для имени */
+    }
+
+    .text-block {
+        max-width: 100%; /* Ширина текста равна ширине контейнера */
+    }
+
+    .text-block p:first-child {
+        font-size: 18px; /* Еще больше уменьшаем размер шрифта */
+    }
+
+    .text-block p:nth-child(2) {
+        font-size: 16px; /* Еще больше уменьшаем размер шрифта для второго абзаца */
+    }
+
+    .text-block button {
+        width: 140px; /* Еще больше уменьшаем ширину кнопки */
+        height: 45px; /* Еще больше уменьшаем высоту кнопки */
+        font-size: 12px; /* Еще больше уменьшаем размер шрифта кнопки */
+    }
+
+    .social-media {
+        font-size: 12px; /* Еще больше уменьшаем размер шрифта в социальных сетях */
+    }
+
+    .social-item img {
+        width: 24px; /* Еще больше уменьшаем размер иконок социальных сетей */
+    }
+}
